@@ -1,0 +1,28 @@
+<html lang="en">
+  <!--import header from header.ejs-->
+  <%- include('./partials/header.ejs') %>
+  <body>
+    <!--import navbar from nav.ejs-->
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="blogs content">
+      <h2>All Blogs</h2>
+
+      <% if (blogs.length > 0) { %>
+      <!--map blogs array-->
+      <% blogs.forEach(blog => { %>
+
+      <h3 class="title"><%= blog.title %></h3>
+      <p class="snippet"><%= blog.snippet %></p>
+
+      <% }) %>
+      <!---->
+      <% } else { %>
+      <p>There are no blogs to display.</p>
+      <% } %>
+    </div>
+
+    <!--import footer from footer.ejs-->
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>
